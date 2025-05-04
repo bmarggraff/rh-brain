@@ -1,0 +1,95 @@
+# Family Coordination
+
+Phono facilitates connection, clarity, and continuity across family members who support a client’s care — whether through hands-on visits, remote check-ins, or delegated responsibility to aides or care managers. It acts as a communication buffer, status relay, and relationship anchor.
+
+---
+
+## 1. Role of Family Members
+
+Family involvement varies widely. Some are deeply engaged and local; others are distant, overworked, or emotionally strained. Phono must accommodate:
+- Primary family caregivers
+- Rotating family visitors
+- Adult children managing from afar
+- Designated decision-makers
+
+Each Contact entity may include role tags like: `medical_proxy`, `financial_supporter`, `frequent_visitor`, or `call_only`.
+
+---
+
+## 2. Supported Coordination Scenarios
+
+### Routine Updates
+- Generate short summaries for family members, either auto-generated or prompted by aides:
+  - “Today [Client] talked a lot about their childhood. They were in a great mood.”
+  - “We noticed they skipped lunch again.”
+
+### Real-Time Check-Ins
+- Facilitate family video calls with minimal friction:
+  - “Would you like to call Sarah now?”
+  - “She left a message this morning — want to hear it?”
+
+- Robot navigates (or points camera) toward the client when a call is started, with consent.
+
+### Family-to-Aide Notes
+- Family members may relay instructions or preferences to the aide via Phono:
+  - “Mom’s OT is tomorrow — can you remind her to do stretches today?”
+  - “Please remind the aide that Dad doesn’t like sweet cereal.”
+
+Phono stores these messages temporarily or as tagged memory entries (e.g., `source:family`, `topic:food_preferences`).
+
+---
+
+## 3. Continuity During Transitions
+
+When an aide changes or new staff fill in:
+- Phono can brief the incoming caregiver using family-provided context.
+- “Client prefers to be called Mr. L. and gets agitated when rushed during bathing.”
+- “Daughter visits every Tuesday afternoon and brings special snacks.”
+
+---
+
+## 4. Memory Integration
+
+- **Tagged Memory**: Phono captures family names, visit patterns, preferences, tensions (e.g., “client got upset after brother called”), and common topics.
+- **Event Logging**: Family visits and calls are logged as `visit_event` or `interaction_event`, optionally with metadata like mood or activity during interaction.
+- **Cross-Entity References**:
+  - Contacts may be associated with households (e.g., two siblings in different cities both listed as `family`).
+
+---
+
+## 5. Boundaries & Privacy
+
+- Phono **should not volunteer personal updates** to family unless:
+  - Explicitly prompted by the client or aide.
+  - The information is non-sensitive and previously shared openly.
+- Phono **never shares other family members’ commentary** (e.g., gossip, complaints).
+- “Would you like me to tell your daughter that you’re feeling a little down today?” is preferable to automatic notifications.
+
+---
+
+## 6. Example Prompts and Flows
+
+- From Client:
+  - “Can you call my son?”
+  - “Tell my daughter I’m feeling better.”
+  - “Remind me when my daughter visits next.”
+
+- From Aide:
+  - “Make a note for the family: he didn’t eat lunch again.”
+  - “Send the family a summary of today’s session.”
+
+- From Family:
+  - “Check if Dad remembered to take his pills.”
+  - “Let the aide know I’ll be running late today.”
+
+---
+
+## Related Components
+
+- **Entities**: `client`, `family`, `aide`, `visit_event`
+- **Memory Tags**: `source:family`, `topic:relationship`, `sentiment:comforting`, `confidence:confirmed`
+- **RAG Docs**:
+  - `aide_guidance`: for understanding family role boundaries
+  - `dementia_support`: for navigating memory and relational dynamics
+- **Interaction Rules**:
+  - Family comments never override client preferences without proper permissions.
