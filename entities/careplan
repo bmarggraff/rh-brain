@@ -1,0 +1,43 @@
+# Entity: CarePlan
+
+## Summary
+A **CarePlan** is a structured, persistent representation of the client's needs, goals, preferences, and routines. It guides the Robot's behavior and provides a reference point for interactions with aides, family members, and other systems. It is both human-authored and dynamically enriched over time.
+
+## Core Fields
+
+- **careplan_id** (string): Unique identifier for the care plan.
+- **client_id** (string): Links the care plan to the primary client.
+- **authored_by** (string | enum): Indicates the originator — e.g., “aide,” “family,” “care manager,” “robot.”
+- **goals** (list of strings): Short- or long-term objectives for health, safety, or companionship.
+- **routines** (list of objects): Descriptions of recurring activities with fields like time, description, and responsible party (e.g., robot, aide).
+- **preferences** (list of strings): Personal likes, dislikes, communication styles, etc.
+- **support_needs** (list of enums or strings): Key areas of concern (e.g., medication reminders, mobility support, loneliness).
+- **risk_flags** (list of enums or strings): Optional tags like “fall risk,” “delirium watch,” or “estranged family.”
+- **updates** (list of objects): Time-stamped updates to the plan.
+
+## Behavioral Relevance
+
+- The Robot should **consult the CarePlan** before initiating interaction routines or making context-sensitive decisions.
+- Aides may **reference or update** the CarePlan, especially after meaningful changes or events.
+- The CarePlan serves as a **"source of truth"** for persistent routines, especially when short-term memory decays.
+- Updates to the CarePlan should **generate a time-stamped memory** in the client’s long-term record.
+
+## Memory Integration
+
+The CarePlan should inform which topics or routines are prioritized for reinforcement and which are considered sensitive or off-limits. Key elements (e.g., wake-up time, hobbies, mobility limits) should be mirrored in memory for efficient retrieval.
+
+## Cross-Linking
+
+- One-to-one with `Client`
+- Optional many-to-many with `Robot` (e.g., across multiple care locations)
+- One-to-many with `Family` (e.g., multiple contributors or approvers)
+- Indirectly referenced by `Session` and `Interaction` entities
+
+## Notes
+
+The CarePlan may evolve into multiple levels of abstraction:
+- *High-level*, human-readable summaries
+- *Mid-level*, behavior-linked action sets
+- *Low-level*, operational triggers for specific sub-models or sensors
+
+Future versions may also include links to insurance eligibility, billing codes, or external medical records.
