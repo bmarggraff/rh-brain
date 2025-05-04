@@ -1,1 +1,81 @@
+# Retrieval-Augmented Generation (RAG) Overview
 
+Phono uses Retrieval-Augmented Generation (RAG) to incorporate external, non-personal knowledge into its behavior. While **memory** handles context-specific facts about individual Clients, Households, or Aides, RAG provides broader domain knowledge and behavioral reference patterns that Phono draws on during interactions.
+
+This document outlines what belongs in the `rag_docs/` directory and how those documents are used during runtime.
+
+---
+
+## Purpose
+
+RAG documents provide structured, non-personal reference material that supports Phono’s ability to:
+- Speak and act in accordance with domain-specific best practices (e.g. elder care, dementia support, ADA-compliant interaction)
+- Guide user or aide interactions using structured patterns (e.g. onboarding conversations, daily check-ins)
+- Access up-to-date health or service information that is not encoded in model weights
+- Maintain consistent tone, pacing, and content across different usage scenarios
+
+These documents are written by designers, engineers, or domain experts and updated periodically. They are not personalized, but they may be segmented by *use case* (e.g. companionship, safety prompts, aide briefing) or *context* (e.g. quiet evening routine vs. emergency callout).
+
+---
+
+## Content Scope
+
+The RAG document set may include:
+
+### Behavioral Models
+- Recommended tone and speech patterns for different user profiles
+- Strategies for conversation initiation, handoffs, and graceful exits
+- Conversational pacing and interruption timing rules
+
+### Safety and Clinical Guidance
+- Best practices for interacting with Clients with mild to moderate dementia
+- How to recognize and respond to signs of distress or confusion
+- Aide coaching tips for non-clinical support
+
+### Experience Flow Guides
+- Step-by-step onboarding flows for Aide-first or Client-first introductions
+- Demo conversation scripts
+- Fall-back and recovery scenarios
+
+### Functional Reference
+- Descriptions of Phono's capabilities (e.g., memory use, photo commenting)
+- Guidance on what the system can and cannot respond to
+- Limitations or disclaimers for sensitive topics
+
+---
+
+## Format and Structure
+
+- **File Format**: Markdown (`.md`) with consistent heading levels for chunking.
+- **Chunking**: Each logical section should be self-contained and easily splittable for retrieval (e.g. `<2k tokens`).
+- **Language**: Clear, declarative English with minimal ambiguity. Avoid overuse of technical jargon unless the document is intended for dev use.
+
+---
+
+## Interaction with Memory
+
+| Feature                     | `memory/`                               | `rag_docs/`                                    |
+|----------------------------|------------------------------------------|------------------------------------------------|
+| Personalized               | Yes                                      | No                                             |
+| Updated during sessions    | Yes                                      | No (manual or periodic updates only)           |
+| Used for behavior synthesis| Yes                                      | Yes                                            |
+| User/Aide editable         | Sometimes (via commands or UI)           | No (admin/developer only)                      |
+
+RAG may **reference expected memory fields** (e.g. "if the user has a preferred breakfast, suggest it"), but does not *contain* memory directly.
+
+---
+
+## Related Files
+
+- `architecture/memory.md` — for short- and long-term memory system
+- `architecture/entities.md` — definitions of memory-bearing and role-specific entities
+- `rag_docs/interaction_guidelines.md` — speech tone and engagement modeling
+- `rag_docs/client_archetypes.md` — conversational guidance for common client types
+
+---
+
+## Future Work
+
+- Define RAG document update cadence and owners
+- Automate chunking/indexing pipeline
+- Add `rag_index.md` file for table of contents
