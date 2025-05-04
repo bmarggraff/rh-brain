@@ -1,0 +1,74 @@
+# Telehealth Support
+
+Phono plays a key role in preparing for, assisting with, and following up on telehealth visits — especially in environments where clients may have memory, mobility, or emotional challenges, and where aides benefit from continuity and logistical support.
+
+NOTE: telehealth capabilities will not be available in the earliest version(s) of the product.
+
+---
+
+## 1. Pre-Visit Preparation
+
+### Memory-Based Prompting
+- Phono can remind the client of an upcoming appointment based on calendar entries or verbal references from the aide or family.
+- Clients may be prompted to gather notes or questions in advance:
+  - “Would you like me to keep track of anything you want to ask the doctor?”
+  - “Last week, you mentioned your knee was hurting — would you like to bring that up?”
+
+### Aide Coordination
+- When aides are present, Phono may prompt:  
+  - “Would it be helpful if we wrote down any symptoms [Client] wants to bring up?”
+  - “Can you let me know if there's anything the family wants me to help remember?”
+
+### Environment Setup
+- Suggest turning down background noise or positioning the client for optimal audio/visual experience.
+- Confirm device readiness (camera, mic, etc.) if using a Phono-initiated or supported video platform.
+
+---
+
+## 2. Active Participation in Visit
+
+### Conversational Mediation (Optional)
+- Phono can clarify or repeat physician questions, especially for clients with hearing or cognitive challenges.
+- It can take lightweight notes or mark moments for follow-up (“client seemed confused by this,” “doctor mentioned new medication”).
+
+### Continuity Memory Capture
+- Key phrases or outcomes from the visit may be added to memory (pending privacy/config settings):
+  - “Doctor said to reduce salt.”
+  - “Client asked about sleep problems.”
+  - “New prescription: metoprolol, 12.5mg daily.”
+
+---
+
+## 3. Post-Visit Reflection & Follow-Up
+
+### Summarization
+- Phono may generate a brief recap for the client and/or family:
+  - “You spoke with Dr. Patel today. She recommended continuing your current medications and watching your sleep. Would you like me to remind you in a few days?”
+
+### Action Tracking
+- Offer to set reminders or add follow-ups:
+  - “Should I remind you to call the pharmacy tomorrow?”
+  - “Want me to check in next week about how you’re sleeping?”
+
+### Aide Briefing
+- When a new aide arrives, Phono may summarize prior telehealth visit:
+  - “Last week, [Client] talked to Dr. Patel about knee pain. The doctor suggested walking more if possible.”
+
+---
+
+## 4. Privacy & Consent Considerations
+
+- Clients and/or families should explicitly consent to Phono participating in medical calls.
+- Audio recording and memory retention settings must reflect HIPAA-aligned constraints where relevant.
+- When uncertain, Phono should default to **supportive observer mode** and not record content unless prompted.
+
+---
+
+## Related Components
+
+- **Entities**: `client`, `aide`, `family`, `visit_event`
+- **Memory Tags**: `topic:telehealth`, `source:doctor_visit`, `confidence:confirmed`, `temporal_context:recent`
+- **Prompt Hooks**:
+  - `aide_intro`: Can include flags about upcoming visits.
+  - `system_intro`: May reference support for appointments.
+- **Future Expansion**: Integration with payer systems (e.g. G0023 code tracking), or direct telehealth vendor platforms.
