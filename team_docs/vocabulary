@@ -1,0 +1,85 @@
+# Vocabulary
+
+This document defines key terms used throughout the Phono product documentation, codebase, and conversations, ensuring clarity and consistency for all stakeholders. Terms may reference specific entities, interaction styles, memory concepts, or domain-specific phrases relevant to home care, robotics, and AI.
+
+---
+
+## Core Terms
+
+### **Phono**
+The name of the robot or companion system. Refers interchangeably to the hardware and AI persona that supports home care aides and clients.
+
+### **Client**
+The individual receiving home care. Often older adults or individuals with cognitive or physical impairments.
+
+### **Aide / Weaver**
+The home care worker supporting the client in person. “Weaver” is a preferred internal term, borrowed from Woven Home Care’s brand language.
+
+### **Household**
+The physical and/or logical environment where a Phono deployment takes place. May contain one or more clients and one or more aides, and is used as a scoping boundary for memory and personalization.
+
+### **Contact**
+Any person related to the client (e.g., family member, neighbor, clinician) who is relevant to Phono’s memory or interactions.
+
+### **Visit Event**
+A structured record of an aide’s visit with a client, including time, participants, notable events, and metadata. Used for continuity and memory summaries.
+
+---
+
+## Interaction Concepts
+
+### **Tone Tuning**
+The act of adapting Phono’s interaction style—volume, cadence, vocabulary, emotional warmth—based on cues from the user or context.
+
+### **Callout Mode**
+A configuration that supports temporary or fill-in aides by surfacing briefing-style memory summaries and prompts for fast onboarding.
+
+### **Fallback and Repair**
+Strategies Phono uses when it mishears, is unsure, or needs to correct the course of conversation. Includes clarifying questions, graceful topic changes, and subtle re-grounding.
+
+### **Memory Promotion**
+The process of elevating a short-term memory (e.g., an utterance or observation) into long-term memory based on relevance, repetition, or user instruction.
+
+---
+
+## Design Vocabulary
+
+### **Subservient by Default**
+A design principle that Phono should defer to humans, especially aides, in tone and decision-making—even while offering helpful suggestions.
+
+### **Silent Companionship**
+Phono’s default mode when unsure whether to speak—observing respectfully and engaging only when the context is clear or the user initiates.
+
+### **Eyes Talking**
+A reference to Phono’s use of visual indicators (e.g., animated eyes) to express emotion, readiness, listening state, or empathy—without necessarily speaking aloud.
+
+---
+
+## Behavioral Concepts
+
+### **Emotional Spike**
+An observed moment of significant emotional change (e.g., sadness, joy, anxiety), flagged for memory or future retrieval.
+
+### **Context Weighting**
+Prioritizing memory entries and responses based on recency, relevance to current topic, emotional tone, and user identity.
+
+### **Observation-First**
+A guiding principle that Phono should gather input and infer before acting—minimizing unnecessary prompts or interventions.
+
+---
+
+## Business / Product Concepts
+
+### **IDN at Home**
+A long-term vision where Phono is part of a vertically integrated care model—providing companionship, data capture, care navigation, and light medical insight under one roof.
+
+### **RAG Doc**
+Retrieval-Augmented Generation document. Structured reference material stored for model access during live conversations.
+
+### **System Prompt / System Intro**
+The base configuration of behavior and tone provided to Phono’s language model at the start of every session. Sets rules of engagement and contextual goals.
+
+---
+
+Let me know if you'd like this expanded with additional terms from product, AI, clinical, or operational domains.
+
