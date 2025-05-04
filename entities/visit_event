@@ -1,1 +1,54 @@
+# Visit Event Entity
+
+The `VisitEvent` entity captures structured data about specific occurrences during a Phono-supported visit. These events can involve a Client, Aide, Contact, or the Robot itself, and may be manually or automatically created.
+
+## Purpose
+- Facilitate accurate memory storage and summarization.
+- Support emotional reinforcement and reporting.
+- Power longitudinal insights into patterns across visits.
+
+## Structure
+```json
+{
+  "id": "uuid",
+  "timestamp": "2025-05-06T14:32:00Z",
+  "participant_ids": ["client_id", "aide_id"],
+  "location_id": "household_id",
+  "type": "hydration_encouragement",
+  "confidence": 0.92,
+  "tags": ["nutrition", "aide", "repeat"],
+  "sentiment": "supportive",
+  "notes": "Aide encouraged client to drink water. Client initially declined but eventually accepted after gentle persistence."
+}
+```
+
+## Example Event Types
+- `meal_prepared`
+- `hydration_encouragement`
+- `fall_risk_observed`
+- `confusion_event`
+- `emotional_moment`
+- `medication_reminder`
+- `aide_departure_summary`
+- `aide-thoughtful-interaction`
+- `family-member-interaction`
+- `activity-of-daily-living-observed`
+- `activity-of-daily-living-supported`
+- `instrumental-activity-of-daily-living-observed`
+- `instrumental-activity-of-daily-living-supported`
+
+## Source
+- **Manual**: Created via prompts like “Phono, make a note of that.”
+- **Automatic**: Detected through pattern recognition or diarization + transcription cues.
+
+## Use Cases
+- Summarizing shifts for family or care managers
+- Triggering memory promotion
+- Supporting success story generation
+- Informing future engagement personalization
+
+## Related Components
+- `memory.md` — where visit events may be promoted into long-term memory
+- `aide_guidance.md` — Phono behaviors related to supporting aides during visits
+- `rag_docs/client_patterns.md` (future) — analyzing repeated visit events
 
