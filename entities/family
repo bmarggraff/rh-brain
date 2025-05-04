@@ -1,0 +1,35 @@
+# Entity: Family
+
+## Summary
+A Family member is any person in the client’s personal support network who is not a paid aide. This may include adult children, spouses, siblings, or close friends involved in care decisions or emotional support. Family may be primary decision-makers, serve as backup caregivers, or simply want occasional updates.
+
+## Key Attributes
+- **Name**: Full name or preferred name.
+- **Relation to Client**: Daughter, son, spouse, sibling, friend, etc.
+- **Contact Information**: Phone number(s), email, optional address.
+- **Role**: Describes how involved they are (e.g., "primary decision-maker," "visits weekly," "emotional support only").
+- **Permissions**: What types of updates or interactions they’ve authorized or requested (e.g., photo sharing, health updates).
+- **Preferred Contact Method & Time**: How/when they prefer to be reached.
+- **Associated Client(s)**: Most will only be linked to one client, but in some cases (e.g. couples) may be associated with more.
+
+## Behaviors & Edge Cases
+- May initiate interactions with the robot (e.g., checking in, video call prompts).
+- May be present during in-home visits or sessions.
+- May have conflicting preferences from the client or other family members (e.g., more or less tech use).
+- May use their own mobile app or portal to review or interact with system summaries.
+- May change over time (e.g., one sibling becomes more involved).
+
+## Memory Interactions
+- Family members can be remembered as important figures in the client’s life, with emotionally resonant references ("Your daughter Sarah called this morning").
+- May be referenced in reminders, rituals, or social stories ("You talked with your grandson Jack yesterday about his soccer game").
+
+## Related Entities
+- `client.md`
+- `aide.md`
+- `session.md`
+- `interaction.md`
+
+## Open Questions
+- Should family members have login access or interaction history tracking?
+- How do we handle disputes between family members?
+- What’s the appropriate balance between proactive robot engagement and preserving family boundaries?
