@@ -1,0 +1,47 @@
+# Entity: Household
+
+## Summary
+
+The "Household" represents the primary physical and social environment in which the Robot operates. It typically includes one or more Clients, one or more human caregivers (e.g., home care aides), and potentially informal caregivers (family members, neighbors). The Household is a persistent unit for memory and context storage and is foundational for rules governing identity, speech, permissions, and engagement style.
+
+## Purpose in Knowledge Architecture
+
+* Anchor for **long-term memory** and contextual continuity.
+* Unit of **multi-user coordination** and disambiguation.
+* Basis for **environmental assumptions** (e.g., routines, safety risks, shared spaces).
+
+## Core Properties
+
+* **Household ID**: Unique identifier scoped per deployment.
+* **Known Residents**: List of Clients and others who live in the home.
+* **Frequent Visitors**: Aides, family, and others who often appear.
+* **Interaction History**: Timeline of visits, conversations, and notable events.
+* **Preferred Styles**: Tone, timing, and cultural preferences for engagement.
+* **Environment Notes**: Home layout info (if available), known risks, accessibility details.
+* **Device Configuration**: Info about the Robot’s form factor, placement, and any companion devices in the household.
+
+## Design Considerations
+
+* **Multiple Clients**: Some Households may contain more than one Client.
+* **Venue Flexibility**: Robots may operate in non-residential venues (e.g., adult day centers, assisted living) — the "Household" concept should adapt to these cases.
+* **Partitioned Memory**: Data must remain segregated across Households unless explicitly authorized.
+* **Client Transitions**: Clients may move between Households or change care contexts; continuity must be preserved when appropriate.
+
+## Memory Guidance
+
+* Long-term memory should be scoped **per Household**, unless a memory is tagged as global or personal (e.g., a memory about the Aide).
+* Household memory should include:
+
+  * A concise **summary of routines** and historical highlights
+  * Taggable **insights and events** (e.g., "Client asked about old radio again on 4/2")
+  * **Role-aware recall** (e.g., what to surface to an Aide vs. a Client vs. a family member)
+
+## Example Use Cases
+
+* Robot greets a new Aide with: “Hi, you must be Sam. We’re in the Johnson household. Claire usually takes Ms. Johnson to her appointments, but I’m happy to fill you in.”
+* During memory care support: “Ms. Johnson, it’s Tuesday. Would you like to go over the upcoming week again? You usually like to hear about your daughter’s Thursday visit.”
+
+---
+
+This entity should be revisited once the physical form factor and memory system design are finalized.
+
