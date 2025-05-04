@@ -1,0 +1,62 @@
+# Memory
+
+Phono's memory architecture balances flexibility, privacy, and utility. It consists of short-term and long-term memory, scoped across both individual users and households. Each memory entry is structured, time-stamped, and tagged for contextual retrieval.
+
+## Memory Tiers
+
+### 1. **Short-Term Memory**
+- **Definition**: Temporary memory from the current interaction session.
+- **Contents**: Real-time user utterances, emotional state, environment signals.
+- **Scope**: Specific to current session and active user.
+- **Persistence**: Automatically evaluated at session end. Any meaningful interaction — including changes in mood, routines, or preferences — is eligible for promotion to long-term memory.
+  
+  **Promotion Mechanism**:
+  - **Automatic**: Triggered by keywords, emotional tone, or entity references (e.g., “My knee hurts today,” “I talked to Sarah”).
+  - **Manual**: Aide or user can explicitly instruct (“Remember this,” “Make a note”).
+  - **Heuristic**: Recurring references or repeated events (e.g., “asks about cat every morning”) are flagged for persistence.
+
+  Non-relevant or fragmentary content (e.g., filler words or background chatter) is softly retained in an ephemeral buffer but pruned routinely.
+
+### Long-Term Memory
+- **Scope**: Persists across sessions, anchored to the Client, Household, or Contact.
+- **Use**: Stores routines, preferences, anecdotes, and meaningful relational data.
+- **Decay**: Some entries decay over time unless tagged as “persistent.” Others decay based on a relevance score or memory retention rules.
+- **Partitioning**:
+  - **Per Client**: Primary memory source for companionship.
+  - **Per Household**: Captures shared routines, transitions, and aide context.
+  - **Per Aide**: Tracks introductions, preferences, and aide-specific behaviors if persistent.
+  - **Per Contact**: Includes metadata and relationship cues (e.g., “daughter Sarah, who visits weekly”).
+
+## Tagging and Retrieval
+### Memory entries can be tagged to allow more natural retrieval, including:
+- **Topic** (e.g., medication, food, hobbies)
+- **Sentiment** (e.g., joyful, anxious)
+- **Source** (e.g., overheard, user-stated, aide-provided)
+- **Confidence** (inferred vs. confirmed)
+- **Temporal Context** (e.g., recurring Monday morning, today, "last visit")
+
+### Memory Retrieval
+- Query-driven: Triggered when relevant to ongoing dialogue.
+- Context-weighted: Most recent and relevant entries preferred.
+- Emotionally attuned: Emotional salience increases retrieval priority.
+
+### Memory Prioritization
+- Time recency
+- Entity relevance
+- Tag match to current conversational topic or situation
+
+## Related Components
+- See `entities.md` for definitions of memory-bearing entities (Client, Aide, Household).
+- See `rag/` and `prompts/` folders for how memory is retrieved or referenced in behavior.
+
+## Special Considerations
+- Memory *must* be partitioned by Household to avoid cross-contamination of data across deployments.
+- There should be a system for tagging memory as “sensitive” or “private” to suppress recall unless explicitly prompted.
+- Memory should allow for “callout mode” support — enabling aides to receive briefing-style summaries of the Client when filling in.
+- All memory should be storable in a structured, queryable format (e.g., JSON with tagging).
+- Some memories (e.g., major life events, persistent traits) are never decayed.
+
+## Future Work
+- Build memory viewers/editors for dev/test use
+- Track memory trust/confidence levels
+- Create memory consistency validators
