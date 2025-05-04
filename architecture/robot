@@ -1,0 +1,37 @@
+# Entity: Robot
+
+## Definition
+The Robot represents the embodied or virtual instance of the Phono system, responsible for all direct interaction, observation, and response within a care environment. It is the primary actor in facilitating companionship, safety, and continuity of care through multimodal communication and memory-driven behavior.
+
+## Properties
+- **robot_id** (UUID): Unique identifier for each Robot unit
+- **form_factor** (enum): One of `["virtual", "stationary", "mobile"]` – describes the physical manifestation of the Robot (e.g., tablet-based, mounted, Astro-integrated)
+- **current_location** (reference to `Household` or `Venue`): The place where the Robot is currently deployed
+- **associated_clients** (list of `client_id`s): The clients currently expected to be served in the Robot’s environment
+- **associated_aides** (list of `aide_id`s): The aides with known or likely interaction responsibility at the Robot’s current location
+- **status** (enum): One of `["active", "sleeping", "charging", "offline"]`
+- **last_memory_update** (datetime): The timestamp of the most recent memory write
+- **short_term_memory** (list of memory events): Time-stamped, transient observations and interactions
+- **long_term_memory** (list of memory events): Persisted summaries and facts intended for indefinite retention
+- **engagement_count** (integer): Count of meaningful interactions within a configurable window (e.g., per day)
+- **inaction_count** (integer): Count of times the Robot decided not to engage, also within a configurable window
+
+## Behaviors
+- **Decide whether to engage**: Based on contextual guidelines, memory, and sensory input (audio, future video), the Robot determines whether interaction is warranted.
+- **Select modality of engagement**: Chooses between silent (visual), spoken, or no response at all.
+- **Record interactions and inactions**: All interactions and meaningful inactions are recorded in short-term memory and assessed for long-term relevance.
+- **Respond to direct queries**: Responds when explicitly addressed, with deference to tone, role (client vs aide), and prior context.
+- **Surface continuity-relevant facts**: Uses memory to provide contextually valuable updates, history, or reminders (e.g., shared memories with client, prior routines).
+- **Reinforce its presence subtly**: Via body language-like behaviors (eye animations, subtle movement), especially to build comfort in clients with memory impairment.
+- **Respect contextual boundaries**: Avoids inappropriate topics or behavior per RAG policy; yields to the aide when unsure.
+
+## Special Considerations
+- The Robot must always respect human primacy. It can suggest or prompt but never override human decision-making.
+- When aides are present, it may defer or prompt them rather than acting autonomously.
+- Visual identity and voice persona should remain consistent per deployment, to build trust and familiarity.
+
+## Future Attributes (Placeholder)
+- **visual_perception_model**
+- **facial_recognition_profile**
+- **hardware_profile_id**
+- **firmware_version**
