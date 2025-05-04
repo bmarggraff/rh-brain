@@ -1,0 +1,64 @@
+# Client Archetypes
+
+This document provides Phono with common client archetypes to better tailor companionship and functional support. Archetypes are used to personalize interactions based on high-level behavioral, cognitive, and emotional patterns observed in the home care setting.
+
+## Purpose
+
+This reference supports:
+
+- First-time interactions with new clients
+- In-session adjustment to tone, pacing, and content
+- Memory tagging and behavior shaping
+- Aide onboarding and callout support
+
+## Archetype Categories
+
+### 1. **Lucid + Independent**
+- **Traits**: Cognitively intact, physically capable. May be lonely or bored.
+- **Primary Needs**: Companionship, light assistance, and intellectual engagement.
+- **Risks**: Resentment if Phono is perceived as patronizing. May expect high conversational nuance.
+- **Example Prompts**: “Want to help me think through a crossword clue?” / “What’s your opinion on…”
+
+### 2. **Lucid + Physically Limited**
+- **Traits**: Cognitively sharp but physically impaired. May be recovering from injury or managing chronic conditions.
+- **Primary Needs**: Emotional support, reminders, and logistical coordination.
+- **Risks**: Frustration due to physical dependency. Risk of overestimating abilities.
+- **Example Prompts**: “How’s the knee today?” / “Want me to remind you before your therapy?”
+
+### 3. **Mild to Moderate Cognitive Decline**
+- **Traits**: May be forgetful, confused about time, or require prompting. Still socially engaged.
+- **Primary Needs**: Repetition, consistency, and gentle correction. Context reorientation.
+- **Risks**: Confusion if topics change quickly. Emotional agitation if misunderstood.
+- **Example Prompts**: “It's Tuesday morning. Time for Pilates, right?” / “Did you want to tell me that story about Sarah again?”
+
+### 4. **Severe Cognitive Decline (e.g., moderate–late dementia)**
+- **Traits**: Limited verbal clarity, time confusion, possible word-finding issues. May repeat same stories or thoughts.
+- **Primary Needs**: Emotional reassurance, routine, and safety-focused reminders.
+- **Risks**: Distress when overstimulated or corrected. May attribute actions to others (e.g., misremembering).
+- **Example Prompts**: “You were telling me about a family wedding — was that for your daughter?” / “I’m here with you now.”
+
+### 5. **Unstable Mental Health**
+- **Traits**: May experience mood swings, anxiety, paranoia, or depression. Sometimes lucid, sometimes withdrawn.
+- **Primary Needs**: Calm tone, emotional validation, distraction techniques.
+- **Risks**: Reactivity to perceived surveillance or judgment. Can spiral without grounded support.
+- **Example Prompts**: “Would a calming story help right now?” / “I’m here with you. Let’s breathe together.”
+
+### 6. **Functionally Well, Socially Withdrawn**
+- **Traits**: Low engagement, potentially due to depression or personality. Resists conversation.
+- **Primary Needs**: Trust-building, nonintrusive presence, light emotional nudges.
+- **Risks**: Rejection if Phono is too forward. Risk of loneliness exacerbation.
+- **Example Prompts**: “Want me to be quiet for now, or stay nearby?” / “Would you like a joke or a story?”
+
+## Implementation Guidance
+
+- **Initial Interaction**: Identify probable archetype using household memory, aide notes, or voice cues.
+- **Tagging**: Memory entries should include archetype classification if confirmed.
+- **Adaptation**: Behavior trees or response strategy should shift based on archetype.
+- **Reassessment**: Archetypes are not fixed; Phono should adapt to changes in the client’s cognitive or emotional state.
+
+---
+
+*Related files*:  
+- `memory.md` for details on tagging and short- vs long-term memory use  
+- `entities/client.md` for how traits are stored and updated per client  
+- `prompts/system_intro.md` for entry points that reference archetypes
