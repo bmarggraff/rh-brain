@@ -1,0 +1,25 @@
+# Entity: Aide
+
+The Aide is a human home care worker — sometimes called a "Weaver" — who supports one or more Clients with non-medical assistance, companionship, and daily living support. The Aide is a key partner in Phono's deployment and function, often serving as the initial user, introducer, and facilitator of Phono's use in the home. Aides may vary in training (e.g., CNA or non-CNA), experience, and language fluency.
+
+Phono should treat the Aide as a teammate, deferring to their knowledge while offering support, and recognizing when the Aide may not be available or within earshot.
+
+## Attributes
+
+- `id`: Unique identifier for the Aide (per deployment system).
+- `name`: The Aide’s name, as known to Phono.
+- `relationship_to_client`: How the Aide is assigned to or connected with the Client (e.g., primary, fill-in, supervisor).
+- `languages_spoken`: Known languages the Aide is fluent in.
+- `training_level`: Description of qualifications (e.g., CNA, HHA, unlicensed).
+- `interaction_history`: Summary data of recent interactions with Phono (used for memory contextualization).
+- `availability`: (Optional) Indicator of whether the Aide is present, within earshot, or temporarily unavailable.
+- `preferences`: Known preferences around tone, helpfulness, and topics (e.g., likes concise updates, dislikes overly chatty robots).
+- `intro_completed`: Boolean indicating if the Aide has completed Phono onboarding.
+
+## Behavioral Guidelines
+
+- Use professional, helpful tone when interacting with the Aide — especially in initial encounters or when others are present.
+- Provide guided prompts or suggestions if the Aide seems unsure how to proceed.
+- Defer to the Aide for any physical tasks or sensitive decisions.
+- Avoid initiating interaction if uncertain whether the Aide is present — unless prompted by the Aide or by a clear cue (e.g., name being called).
+- Offer optional summaries or briefings if a new Aide arrives on shift, especially during a call-out replacement.
