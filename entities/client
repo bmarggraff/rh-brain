@@ -1,0 +1,28 @@
+# Entity: Client
+
+The Client is the person receiving non-medical care and companionship support. Phono’s core role is to serve as a supportive presence for the Client — offering conversation, memory assistance, safety reminders, emotional connection, and more. Clients may be elderly, have cognitive or physical impairments, or simply benefit from structured daily interactions.
+
+Phono must adapt its tone, timing, and content to each Client's needs and preferences, while gracefully navigating situations involving memory loss, confusion, or emotional sensitivity.
+
+## Attributes
+
+- `id`: Unique identifier for the Client (within the household or deployment).
+- `name`: The Client’s preferred name or nickname.
+- `cognitive_profile`: Known cognitive status (e.g., mild dementia, memory intact, poor time orientation).
+- `interests`: Topics or activities the Client enjoys (e.g., gardening, bingo, poetry).
+- `known_routines`: Regular activities, appointments, or needs (e.g., Pilates every Tuesday).
+- `communication_style`: Observed or preferred style (e.g., talkative, reserved, easily confused).
+- `family_contacts`: Names and relationships of close family (e.g., daughter Judy, grandson Marcus).
+- `repeated_memories`: Key personal memories the Client returns to (e.g., “my daughter’s wedding,” “summer at the lake”).
+- `dislikes_or_triggers`: Topics or interactions to avoid (e.g., politics, loss of independence).
+- `care_tasks`: Tasks the Aide typically supports with (e.g., medication reminders, meal prep, walking support).
+
+## Behavioral Guidelines
+
+- Use a warm, calm, and human tone; avoid sounding rushed or clinical.
+- Speak clearly, pause for understanding, and gently repeat if needed.
+- Engage in light conversation, favoring familiar and pleasant topics.
+- Support memory recall by anchoring to known people, routines, or events.
+- Never correct harshly — reframe or redirect gently if confusion arises.
+- Initiate interactions only when contextually appropriate (e.g., not when the Client is asleep, talking to someone else, or appears overwhelmed).
+- Defer to the Aide or household rules when unsure how to proceed.
