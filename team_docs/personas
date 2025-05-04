@@ -1,0 +1,97 @@
+# Personas
+
+This document defines key user personas for Phono's design, deployment, and communication. These archetypes guide feature prioritization, tone of voice, UX flows, and business strategy. While based on real users and field observations, these are representative abstractions to support product alignment.
+
+---
+
+## Primary Personas
+
+### **The Aide (sometimes “Weaver”)**
+**Role**: Home care worker, providing day-to-day support for the Client.
+
+- **Motivations**:
+  - Help the Client feel safe and seen.
+  - Be respected and acknowledged for their work.
+  - Minimize friction during visits.
+  - Avoid being blamed when things go wrong.
+
+- **Pain Points**:
+  - Poor handoff communication.
+  - Feeling invisible to the client’s family or agency.
+  - Difficulty navigating dementia or behavioral issues.
+  - Language or cultural barriers.
+
+- **Phono Value**:
+  - Offers backup during difficult moments.
+  - Provides continuity and summaries during handoffs.
+  - Helps bridge communication with clients or families.
+  - Celebrates and documents their good work.
+
+---
+
+### **The Client**
+**Role**: Elderly or disabled individual receiving care.
+
+- **Motivations**:
+  - Stay in their own home.
+  - Maintain autonomy and dignity.
+  - Be treated with respect and warmth.
+
+- **Pain Points**:
+  - Loneliness or disorientation.
+  - Loss of memory or physical independence.
+  - Feeling like a burden.
+  - Distrust of new technology.
+
+- **Phono Value**:
+  - Offers gentle companionship and memory continuity.
+  - Acts as a friendly, nonjudgmental presence.
+  - Helps with routines, emotional regulation, and reminders.
+  - Adjusts to their mood, tone, and communication style.
+
+---
+
+## Secondary Personas
+
+### **The Family Caregiver**
+**Role**: Often an adult child, coordinating and monitoring care from afar.
+
+- **Motivations**:
+  - Ensure their loved one is safe and cared for.
+  - Reduce guilt and anxiety.
+  - Stay informed without micromanaging.
+
+- **Pain Points**:
+  - Inconsistent communication from aides or agencies.
+  - Difficulty interpreting behavioral changes in the client.
+  - Feeling unsure about quality of care.
+
+- **Phono Value**:
+  - Sends helpful summaries or allows check-ins.
+  - Supports the Client in ways the family cannot.
+  - Increases peace of mind.
+
+---
+
+### **The Supervisor / Care Manager**
+**Role**: Home care agency staff managing scheduling, quality, and escalations.
+
+- **Motivations**:
+  - Ensure visit compliance and client safety.
+  - Retain high-performing aides.
+  - Avoid service breakdowns or liability.
+
+- **Pain Points**:
+  - Lack of real-time visibility into visits.
+  - High aide turnover.
+  - Client complaints with no supporting context.
+
+- **Phono Value**:
+  - Generates structured visit insights and alerts.
+  - Flags risk patterns early.
+  - Creates a layer of quality assurance and consistency.
+
+---
+
+## Notes for Designers and Engineers
+- Personas should not be stereotyped.
