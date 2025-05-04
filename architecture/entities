@@ -1,0 +1,60 @@
+# entities.md
+
+This document outlines the core entity types that Phono, the Robot.Health system, will recognize and track for memory, personalization, and intelligent interaction. Each entity supports both system design and dynamic memory retrieval (RAG) as well as future integration with external services and context.
+
+---
+
+## Primary Entities
+
+### 1. **Client**
+- An individual receiving home-based support or companionship.
+- May have cognitive impairment (e.g., mild to moderate dementia).
+- Has a preferred name, pronouns, emotional tone, communication style, and memory cues.
+- May have multiple associated Weavers (aides) and family members.
+
+### 2. **Aide** (aka Weaver)
+- A paid or volunteer individual providing in-home care and companionship.
+- May act as Phono's introducer and facilitator.
+- Can provide structured and unstructured data via conversation or app input.
+- Varies in tech fluency and attentiveness.
+
+### 3. **Family Member**
+- Often involved in care planning, emotional support, and decision-making.
+- May interact with Phono directly or via delegation.
+- Can be stored as a known individual with relationship metadata (e.g., daughter, son, spouse).
+
+### 4. **Household**
+- A specific home location, often shared by a Client and occasionally others.
+- Used for tenancy partitioning and physical context (e.g., layout, room references).
+- Includes address, common environmental features, and known routines.
+
+### 5. **Care Organization**
+- Entity that employs or coordinates aides (e.g., Woven Home Care).
+- May provide APIs, shift schedules, emergency contacts, etc.
+- May also house system-wide preferences or compliance rules.
+
+### 6. **Robot Instance**
+- A single Phono unit (virtual or robotic).
+- May be associated with one or more Clients, Weavers, or Households.
+- Tracks local context, capabilities, and versioning.
+
+---
+
+## Secondary Entities (optional, derived, or planned)
+
+- **Care Episode**: A bounded timeframe of interaction (e.g., shift, visit, handoff).
+- **Interaction Log**: Events (spoken, visual, emotional) tracked for memory and analysis.
+- **External Professional**: Physicians, social workers, or others occasionally referenced or contacted.
+- **Task / Activity**: Specific user actions (e.g., "take medicine", "go for walk") tagged and optionally structured.
+- **Memory Cue**: Salient personal or emotional references used for grounding or re-engagement (e.g., "Marie loves sunflowers").
+
+---
+
+## Notes
+- All primary entities should support structured and semi-structured memory.
+- Privacy, safety, and consent considerations will govern memory retention and access.
+- Each Robot Instance maintains scoped memory for its associated Household and Clients, with multi-layered tenancy and decay rules.
+
+---
+
+Next Step: Define relationships, access patterns, and memory retention policies for each entity type.
